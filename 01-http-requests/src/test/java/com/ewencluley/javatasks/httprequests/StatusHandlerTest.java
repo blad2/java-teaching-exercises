@@ -22,8 +22,7 @@ public class StatusHandlerTest {
         // create a mock HttpExchange
         HttpExchange mockHttpExchange = mock(HttpExchange.class);
         // that will return the mock output stream when its getResponseBody method is called
-        when(mockHttpExchange.getResponseBody())
-                .thenReturn(mockOutputStream);
+        when(mockHttpExchange.getResponseBody()).thenReturn(mockOutputStream);
 
         // define the expected reponse body bytes
         byte[] expectedResponseBody = "OK".getBytes(StandardCharsets.UTF_8);
@@ -32,7 +31,6 @@ public class StatusHandlerTest {
         // !!!!!!!!! TEST !!!!!!!!!!
         //run the method we want to test
         handler.handle(mockHttpExchange);
-
 
         // !!!!!!!!! VERIFY !!!!!!!!!
         // check that at some point during the method running the mock output stream has its

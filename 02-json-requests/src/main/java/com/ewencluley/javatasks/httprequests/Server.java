@@ -10,7 +10,7 @@ public class Server {
     public Server() throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/status", new StatusHandler());
-        server.createContext("/exaggerate", new HandlerPostRqst());
+        server.createContext("/jsondata", new JsonHandler());
         server.start();
     }
 
