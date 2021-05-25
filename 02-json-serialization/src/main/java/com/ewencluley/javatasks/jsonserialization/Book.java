@@ -1,4 +1,4 @@
-package com.ewencluley.javatasks.httprequests;
+package com.ewencluley.javatasks.jsonserialization;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
