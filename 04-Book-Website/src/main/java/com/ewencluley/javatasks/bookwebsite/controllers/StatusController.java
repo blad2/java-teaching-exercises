@@ -1,15 +1,12 @@
-package com.ewencluley.javatasks.springboot.controllers;
+package com.ewencluley.javatasks.bookwebsite.controllers;
 
 import com.ewencluley.javatasks.springboot.model.Book;
 import com.ewencluley.javatasks.springboot.model.BookCreationReponse;
 import com.ewencluley.javatasks.springboot.model.BookNotFoundException;
 import com.ewencluley.javatasks.springboot.model.Status;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,10 +29,9 @@ public class StatusController {
 
     @RequestMapping(value = "/book/{bookTitle}", produces = {"application/json"}, method = RequestMethod.GET)
     @ResponseBody
-    public Book getBook(@PathVariable("bookTitle") String bookName) throws BookNotFoundException {
-        Book book = bookTitle.get(bookName);
+    public Book getBook(@PathVariable("bookTitle") String bookTitle) throws BookNotFoundException {
+        Book book = this.bookTitle.get(bookTitle);
         if (book == null) {
-            //return new ResponseEntity<String>("{\"error\": \"Not found\"}", HttpStatus.NOT_FOUND);
             throw new BookNotFoundException("Not found");
         }
         return book;

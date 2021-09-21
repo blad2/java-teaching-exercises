@@ -12,6 +12,7 @@
     <module>01-http-requests</module>
     <module>02-json-serialization</module>
     <module>03-spring-boot</module>
+    <module>04-Book-Website</module>
   </modules>
   
   <packaging>pom</packaging>
